@@ -226,7 +226,7 @@ def refresh_map_for(view, from_view=False):
     map_view = get_code_map_view()
     CURRENT_TEMP_ID = None
 
-    if not map_view:
+    if not map_view or view.settings().get('is_widget'):
         return
     elif file and path.basename(file) == "Code - Map":
         return
